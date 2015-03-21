@@ -1,0 +1,9 @@
+RW.server=192.168.1.11
+RW.server.port=1099
+RW.numberOfReaders= 2
+RW.reader0=khaled@192.168.1.12
+RW.reader1=192.168.1.11
+RW.number2fWriters=2
+RW.reader1=khaled@192.168.1.12
+RW.reader2=192.168.1.11
+RW.numberOfAccesses= 3
