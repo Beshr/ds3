@@ -1,8 +1,8 @@
-RW.server=192.168.0.125
+RW.server=100.74.194.21
 RW.server.port=1099
 RW.numberOfReaders= 2
-RW.reader0=beshr@192.168.0.125,0
-RW.reader0=DS-17-02-00@191.238.96.54,63753
+RW.reader0=DS-17-02-00@nctest1.cloudapp.net,63753
+RW.reader0=DS-17-02-00@nctest1.cloudapp.net,63753
 RW.numberOfWriters=1
-RW.reader0=DS-17-02-00@191.238.96.54,63753
+RW.reader0=DS-17-02-00@nctest1.cloudapp.net,63753
 RW.numberOfAccesses= 3
