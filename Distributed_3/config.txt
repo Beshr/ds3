@@ -1,11 +1,8 @@
-RW.server=192.168.1.8
+RW.server=192.168.0.125
 RW.server.port=1099
-RW.numberOfReaders= 3
-RW.reader0=beshr@192.168.1.8
-RW.reader0=beshr@192.168.1.8
-RW.reader0=khaled@192.168.1.3
-RW.numberOfWriters=3
-RW.reader0=khaled@192.168.1.3
-RW.reader0=beshr@192.168.1.8
-RW.reader0=khaled@192.168.1.3
+RW.numberOfReaders= 2
+RW.reader0=beshr@192.168.0.125,0
+RW.reader0=DS-17-02-00@191.238.96.54,63753
+RW.numberOfWriters=1
+RW.reader0=DS-17-02-00@191.238.96.54,63753
 RW.numberOfAccesses= 3
