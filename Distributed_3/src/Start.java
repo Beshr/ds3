@@ -6,7 +6,7 @@ public class Start {
 
 	public static void main(String[] args) {
 
-		final Configuration config = new Configuration("config.txt");
+		final Configuration config = new Configuration("/tmp/ds3/Distributed_3/config.txt");
 
 		// run the servers
 		Runnable r = new Runnable() {
@@ -26,19 +26,28 @@ public class Start {
 		Thread t = new Thread(r);
 		t.start();
 		// run clients
-		String path = "/tmp/Distributed_3";
+		String path = "/tmp/ds3/Distributed_3";
 		// run readers
 		ArrayList<ClientObj> allClients = config.getClients();
 		String argss = "";
+		String[] CliAddport={"",""};
 		try {
 			for (int i = 0; i < allClients.size(); i++) {
+				CliAddport[0]="";
+				CliAddport[1]="";
 				ClientObj client = allClients.get(i);
 				argss = "-Djava.security.manager -Djava.security.policy=rmi.policy -Djava.rmi.server.hostname="
 						+ client.getAddress().split("@")[1];
-					
+				CliAddport=client.getAddress().split(",");
+				if(CliAddport[1].equals("0")){
+					CliAddport[1]="";
+				}else{
+					CliAddport[1]= "-p " +CliAddport[1];
+				}
 				System.out.println(config.getServerPort());
+				System.out.println("SSH To "+CliAddport[0]+"    "+CliAddport[1]);
 				Process pro= Runtime.getRuntime().exec(
-						"ssh " + client.getAddress() + " cd \"" + path
+						"ssh "+ CliAddport[1] +" "+CliAddport[0]  + " cd \"" + path
 								+ "/bin\" ;java " + argss + " Client "
 								+ client.getId() + " "
 								+ config.getServerAddrs() + " "
